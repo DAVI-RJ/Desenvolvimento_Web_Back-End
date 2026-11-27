@@ -32,24 +32,24 @@ public class CustomerController {
   }
 
   @GetMapping("/{id}")
-  public Customer findById(@PathVariable Long id) {
+  public Customer findById(Long id) {
     return service.findById(id);
   }
 
   @PostMapping("/register")
   @ResponseStatus(HttpStatus.CREATED)
   public Customer create(@RequestBody Customer data) {
-    return service.create(data);
+    return service.save(data);
   }
 
-  @PutMapping("/{id}")
-  public Customer update(@PathVariable Long id, @RequestBody Customer data) {
+  /* @PutMapping("/{id}")
+  public Customer update(Long id, @RequestBody Customer data) {
     return service.update(id, data);
-  }
+  } */
 
   @DeleteMapping("/{id}")
   @ResponseStatus(HttpStatus.NO_CONTENT)
-  public void destroy(@PathVariable Long id) {
+  public void destroy(Long id) {
     service.destroy(id);
   }
 }
