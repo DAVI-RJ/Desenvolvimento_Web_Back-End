@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,24 +33,25 @@ public class CustomerController {
   }
 
   @GetMapping("/{id}")
-  public Customer findById(Long id) {
+  public Customer findById(@PathVariable Long id) {
     return service.findById(id);
   }
 
   @PostMapping("/register")
   @ResponseStatus(HttpStatus.CREATED)
   public Customer create(@RequestBody Customer data) {
+    data.setId(null);
     return service.save(data);
   }
 
   /* @PutMapping("/{id}")
-  public Customer update(Long id, @RequestBody Customer data) {
+  public Customer update(@PathVariable Long id, @RequestBody Customer data) {
     return service.update(id, data);
   } */
 
   @DeleteMapping("/{id}")
   @ResponseStatus(HttpStatus.NO_CONTENT)
-  public void destroy(Long id) {
+  public void destroy(@PathVariable Long id) {
     service.destroy(id);
   }
 }
