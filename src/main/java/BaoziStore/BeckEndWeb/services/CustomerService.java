@@ -28,6 +28,9 @@ public class CustomerService {
   }
 
   public void destroy(Long id){
+    if (!repository.existsById(id)) {
+      throw new RuntimeException("Customer not found: " + id);
+    }
     repository.deleteById(id); 
   }
 }
