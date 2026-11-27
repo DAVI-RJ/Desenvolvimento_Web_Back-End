@@ -43,20 +43,20 @@ public class Customer {
     this.id = id;
   }
 
-  public String getNome() {
+  public String getName() {
     return name;
   }
 
-  public void setNome(String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
-  public LocalDate getClienteDesde() {
+  public LocalDate getDateRegister() {
     return dateRegister
     ;
   }
 
-  public void setClienteDesde(LocalDate dateRegister
+  public void setDateRegister(LocalDate dateRegister
 
   ) {
     this.dateRegister = dateRegister;
