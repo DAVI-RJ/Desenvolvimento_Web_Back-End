@@ -1,5 +1,7 @@
 package BaoziStore.BeckEndWeb.services;
 
+import BaoziStore.BeckEndWeb.models.Customer;
+import BaoziStore.BeckEndWeb.repository.CustomerRepository;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
